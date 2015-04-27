@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Maproom</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="img/shortcut.ico">
+	<link rel="icon" href="img/icon.ico">
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/leaflet.css" /> 
+    <link rel="stylesheet" href="css/menus.css" />	
+    <link rel="stylesheet" href="css/component.css" />	
+</head>
+<body >
+
+<!--Templates-->
+ <script id="layers-template" type="text/x-backbone">
+    <h3>Layers</h3>    
+	<a href="#" id="nav-legend-index">Layer 1</a>
+	<a href="#">Layer 1</a>
+	<a href="#">Layer 2</a>
+	<a href="#">Layer 3</a>
+	<a href="#">Layer 4</a>
+	<a href="#">Layer 5</a>    
+  </script>  
+ 
+  <script id="info-template" type="text/x-backbone">
+    <h3>Info</h3>    
+	<a href="#">Some Info</a>
+	<a href="#">Other Info</a>
+  </script>
+
+  <script id="tools-template" type="text/x-backbone">
+    <h3>Tools</h3>    
+	<a href="#">Tool 1</a>
+	<a href="#">Tool 2</a>
+  </script>
+
+  <!--Templates-->
+
+<div id="content" class="container">
+	<!-- Layers Script -->
+    <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		
+	</nav>
+
+	<!--Info Menu-->
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+		
+	</nav>
+	<!--Search Results Menu-->
+	<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s3">
+		
+	</nav>
+	<!--Tools Menu-->
+	<nav class="cbp-spmenu cbp-spmenu-horizontal cbp-spmenu-bottom" id="cbp-spmenu-s4">
+				
+	</nav>
+
+	<!-- Nav Bar -->
+	<nav class="navbar navbar-blue navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+                    	
+	    	<button type="button" id="btnTools" class="showbottom navbar-toggle collapsed col-xs-1" aria-expanded="false" aria-controls="navbar">           
+	            <span class="fa fa-wrench"></span>	            
+	        </button>
+
+	    	<button type="button" class="showright navbar-toggle collapsed col-xs-1" aria-expanded="false" aria-controls="navbar">            
+	            <span class="fa fa-info-circle"></span>	            
+	        </button>	 
+
+	     	<button type="button" class="showleft navbar-toggle collapsed col-xs-1" aria-expanded="false" aria-controls="navbar">            
+	            <span class="fa fa-globe"></span>	            
+	        </button>	          
+	         
+          	<form class="navbar-form  navbar-toggle collapsed col-xs-9 pull-left">
+	            <div class="input-group input-group-md">
+	              <input name="srch-term" class="form-control" id="srch-term" type="text" placeholder="Search">
+	              <div class="input-group-btn">
+	                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+	              </div>
+	            </div>
+          	</form>                  
+                          
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+
+        	<form class="navbar-form navbar-brand">
+	            <div class="input-group input-group-md" >
+	              <input name="srch-term" class="form-control" id="srch-term" type="text" placeholder="Search">
+	              <div class="input-group-btn">
+	                <button class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+	              </div>
+	            </div>
+	        </form>
+
+
+          	<ul class="nav navbar-nav showbottom navbar-right">
+	            <li><a href="#"><span class="fa fa-wrench"></span> Tools</a></li>
+	        </ul>   
+
+            <ul class="nav navbar-nav showright navbar-right">
+	            <li><a href="#"><span class="fa fa-info-circle"></span>	 Info</a></li>
+	        </ul>
+
+	        <ul class="nav navbar-nav navbar-right">
+            	<li class="showleft active"><a href="#"><span class="fa fa-globe"></span> Layers</a></li>
+            </ul>
+          
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    
+    
+
+	<div id="map"></div>
+
+</div>
+	<!-- vendor scripts -->
+    <script src="js/vendor/jquery.js" ></script>
+    <script src="js/vendor/backbone.marionette/underscore.js"></script>
+  	<script src="js/vendor/backbone.marionette/backbone.js"></script>
+  	<script src="js/vendor/backbone.marionette/backbone.marionette.js"></script>
+    <script src="js/vendor/bootstrap.js"></script>
+    <script src="js/vendor/modernizr.custom.js"></script>
+    <script src="js/vendor/leaflet.js" ></script>
+    <script src="js/vendor/classie.js"></script>
+    <script src="js/vendor/leaflet-providers.js" ></script>
+   
+   	<!-- module scripts -->
+    <script src="js/apps/layout/layout.js" ></script>
+
+    <script src="js/apps/map/index.js" ></script>
+
+    <script src="js/apps/layers/index.js" ></script>
+    <script src="js/apps/layers/controller.js" ></script>
+    <script src="js/apps/layers/views.js" ></script>
+
+    <script src="js/apps/info/index.js" ></script>
+    <script src="js/apps/info/controller.js" ></script>
+    <script src="js/apps/info/views.js" ></script>
+
+    <script src="js/apps/tools/index.js" ></script>
+    <script src="js/apps/tools/controller.js" ></script>
+    <script src="js/apps/tools/views.js" ></script>    
+
+    <!-- init script -->
+    <script src="js/apps/index.js" ></script>
+
+    <script>  	
+  	
+    $(function(){
+      MR.start();
+    });
+
+  </script>
+</body>
+</html>
