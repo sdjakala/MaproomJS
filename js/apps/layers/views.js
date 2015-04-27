@@ -5,6 +5,6 @@ var LayersView = Marionette.ItemView.extend({
 	},
 	clickLayer : function(ev){
 		ev.preventDefault();
-		UserAdmin.trigger("layer:clicked");
+		MR.trigger("layer:clicked");
 	}
 }); 	  	

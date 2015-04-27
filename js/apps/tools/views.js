@@ -5,6 +5,6 @@ var ToolsView = Marionette.ItemView.extend({
 	},
 	clickTool : function(ev){
 		ev.preventDefault();
-		UserAdmin.trigger("tool:clicked");
+		MR.trigger("tool:clicked");
 	}
 }); 	  	

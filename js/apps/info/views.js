@@ -5,6 +5,6 @@ var InfoView = Marionette.ItemView.extend({
 	},
 	clickInfo : function(ev){
 		ev.preventDefault();
-		UserAdmin.trigger("info:clicked");
+		MR.trigger("info:clicked");
 	}
 }); 	  	
